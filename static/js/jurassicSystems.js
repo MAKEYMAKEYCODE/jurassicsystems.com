@@ -546,3 +546,20 @@
     });
   });
 }(jQuery, soundManager));
+
+jpTerminal.addCommand({
+name: 'reboot',
+summary: 'reboot the system',
+manPage: 'SYNOPSIS\n' +
+'\treboot [yes]\n\n' +
+'DESCRIPTION\n' +
+'\tReboots the system.\n\n' +
+'AUTHOR\n' +
+'\tWritten by Paul Kenosky.\n',
+command: function(env, inputLine) {
+var arg = inputLine.trim().split(/ +/)[1] || '',
+output = $('').text('reboot:');
+
+  if (arg.toLowerCase() === 'yes') {
+    location.reload();         
+  }
